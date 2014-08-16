@@ -19,8 +19,11 @@ public class TesteCadastroConta {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		EntityManagerFactory emf=Persistence.createEntityManagerFactory("controledefinancas");
-		EntityManager em=emf.createEntityManager();
+		//EntityManagerFactory emf=Persistence.createEntityManagerFactory("controledefinancas");
+		//EntityManager em=emf.createEntityManager();
+		
+		EntityManager em=JPAUtil.getEntityManager();
+		
 		Conta conta = new Conta();
 		conta.setTitular("Maria");
 		conta.setSaldo(500);
