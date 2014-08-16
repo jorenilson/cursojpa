@@ -22,13 +22,14 @@ public class TesteCadastroConta {
 		//EntityManagerFactory emf=Persistence.createEntityManagerFactory("controledefinancas");
 		//EntityManager em=emf.createEntityManager();
 		
-		EntityManager em=JPAUtil.getEntityManager();
+		EntityManager em=JPAUtil.getEM();
 		
 		Conta conta = new Conta();
-		conta.setTitular("Maria");
+		conta.setTitular("jorenilson");
 		conta.setSaldo(500);
+		ContaDao dao=new ContaDao(em);
 		em.getTransaction().begin();
-		em.persist(conta);
+		dao.Cadastrar(conta); //Cadastrar nova Conta.
 		em.getTransaction().commit();
 		em.close();
 		System.out.println("Codigo "+conta.getId());

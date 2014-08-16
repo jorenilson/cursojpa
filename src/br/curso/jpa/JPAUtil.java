@@ -14,7 +14,7 @@ import javax.persistence.Persistence;
 public class JPAUtil {
  private static final EntityManagerFactory emf=Persistence.createEntityManagerFactory("controladefinancas");
  
- public static EntityManager getEntityManager(){
+ public static EntityManager getEM(){
 	 return emf.createEntityManager();
  }
 }
