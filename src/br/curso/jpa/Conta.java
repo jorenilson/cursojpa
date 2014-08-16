@@ -1,9 +1,15 @@
 package br.curso.jpa;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Conta {
+	@Id
+	@GeneratedValue
 	private long id;
 	private String titular;
-	private double saldo;
 	/**
 	 * @return the id
 	 */
@@ -40,4 +46,6 @@ public class Conta {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+	private double saldo;
+	
 }
