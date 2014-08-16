@@ -24,15 +24,24 @@ public class TesteCadastroConta {
 		
 		EntityManager em=JPAUtil.getEM();
 		
-		Conta conta = new Conta();
-		conta.setTitular("jorenilson");
-		conta.setSaldo(500);
+		//Conta conta = new Conta();
+		Conta contaExcluir=new Conta();
+		//conta.setTitular("jorenilson");
+		//conta.setSaldo(500);
 		ContaDao dao=new ContaDao(em);
 		em.getTransaction().begin();
-		dao.Cadastrar(conta); //Cadastrar nova Conta.
+		
+		
+		//Cadastrar uma nova Conta.
+		//dao.Cadastrar(conta); 
+		
+		//Excluir uma Conta
+		contaExcluir.setId(1);
+		dao.Excluir(contaExcluir);
+		
 		em.getTransaction().commit();
 		em.close();
-		System.out.println("Codigo "+conta.getId());
+		//System.out.println("Codigo "+conta.getId());
 		
 	}
 

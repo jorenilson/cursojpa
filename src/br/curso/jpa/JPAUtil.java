@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
  *
  */
 public class JPAUtil {
- private static final EntityManagerFactory emf=Persistence.createEntityManagerFactory("controladefinancas");
+ private static final EntityManagerFactory emf=Persistence.createEntityManagerFactory("controledefinancas");
  
  public static EntityManager getEM(){
 	 return emf.createEntityManager();
