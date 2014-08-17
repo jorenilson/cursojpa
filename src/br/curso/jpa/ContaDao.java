@@ -1,9 +1,11 @@
 package br.curso.jpa;
 
-import javax.management.Query;
-import javax.persistence.*;
+import java.util.List;
 
-import antlr.collections.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+
 
 public class ContaDao {
 	private EntityManager em;
@@ -26,9 +28,9 @@ public class ContaDao {
 		return em.getReference(Conta.class, id);
 	}
 	
-	public java.util.List<Conta> listar(){
+	public List<Conta> listar(){
 		String jpql="Select c from Conta c";
-		Query query=(Query) em.createQuery(jpql);
-		return ((javax.persistence.Query) query).getResultList();
+		Query query=em.createQuery(jpql);
+		return query.getResultList();
 	}
 }
