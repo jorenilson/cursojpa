@@ -28,6 +28,7 @@ public class TesteCadastroConta {
 		//Conta contaExcluir=new Conta();
 		conta.setTitular("jorenilson");
 		conta.setSaldo(500);
+		
 		ContaDao dao=new ContaDao(em);
 		em.getTransaction().begin();
 		
